@@ -1,23 +1,23 @@
 <?php
 
-include "classes/Personnage.php";
+include "./classes/Personnage.php";
 
 // Creation d'une instance de la classe personnage
 $perso = new personnage();
-
-echo $perso->nom;
+$perso->name = "Sam";
+echo $perso->name;
 
 echo"<br><br>";
 
 
 
 $perso2 = new personnage();
-$perso2->nom = "Robert";
-echo $perso2->nom;
+$perso2->new = "Robert";
+echo $perso2->new;
 
 
 
 $perso->walkRight();
-$perso->walkRight();
-$perso->walkRight();
-$perso->walkRight();
+$perso->walkLeft();
+$perso->walkTop();
+$perso->walkBottom();

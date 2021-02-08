@@ -5,13 +5,30 @@ class Personnage {
 
     // La propriété id est privée, je ne peux pas la modifier ou la lire directement en dehors de cette classe
     private $id;
-    public $nom;
+    private $nom;
+
+    /**
+     * @return string
+     */
+    public function getNom(): string
+    {
+        return $this->nom;
+    }
+
+    /**
+     * @param string $nom
+     */
+    public function setNom(string $nom): void
+    {
+        $this->nom = $nom;
+    }
+
     public $x;
     public $y;
 
     // Constructeur de ma classe permettant de définir des valeurs par défaut lorsqu'elle est instanciée
     public function __construct() {
-        $this->nom = "Nom par défaut";
+        $this->nom = "Robert";
         $this->x = 0;
         $this->y = 0;
     }
@@ -19,6 +36,21 @@ class Personnage {
     // Méthode permettant de déplacer le personnage vers la droite
     public function walkRight() {
         $this->x += 1;
+
+    }
+    // Méthode permettant de déplacer le personnage vers la gauche
+    public function walkLeft() {
+        $this->x += -1;
+
+    }
+    // Méthode permettant de déplacer le personnage vers le haut
+    public function walkTop() {
+    $this->y += 1;
+
+    }
+    // Méthode permettant de déplacer le personnage vers le bas
+    public function walkBottom() {
+        $this->y += -1;
 
     }
 
